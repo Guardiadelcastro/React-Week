@@ -13,6 +13,8 @@ export default class CounterButton extends React.Component<{}, CounterButtonStat
   constructor(props) {
     super(props);
     this.state = {numberOfClicks: 0};
+
+    this.incrementCount = this.incrementCount.bind(this);
   }
 
   incrementCount() {
@@ -22,7 +24,7 @@ export default class CounterButton extends React.Component<{}, CounterButtonStat
   }
 
   render() {
-    return <button onClick={this.incrementCount.bind(this)} >{this.state.numberOfClicks}</button>;
+    return <button onClick={this.incrementCount} >{this.state.numberOfClicks}</button>;
   }
 
 }
