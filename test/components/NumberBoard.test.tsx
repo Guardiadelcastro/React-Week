@@ -26,27 +26,27 @@ describe('NumberBoard', () => {
 
     test('order of elements shoulb be +, 0, -', () => {
       const wrapper = shallow(<NumberBoard/>);
-      const elements = wrapper.children().map(node => node.text());
+      const elements = wrapper.find('div').children().map(node => node.text());
       expect(elements).toEqual(['+', '0', '-']);
     });
 
     test('+ button should be first child', () => {
       const wrapper = shallow(<NumberBoard/>);
-      expect(wrapper.childAt(0).text()).toBe('+');
-      expect(wrapper.childAt(0).is('button')).toBeTruthy();
-      console.log(wrapper.at(0).html())
+      expect(wrapper.find('div').childAt(0).text()).toBe('+');
+      expect(wrapper.find('div').childAt(0).is('button')).toBeTruthy();
+      console.log(wrapper.find('div').at(0).html())
     });
 
     test('p should be second child and be 0', () => {
       const wrapper = shallow(<NumberBoard/>);
-      expect(wrapper.childAt(1).text()).toBe('0');
-      expect(wrapper.childAt(1).is('p')).toBeTruthy();
+      expect(wrapper.find('div').childAt(1).text()).toBe('0');
+      expect(wrapper.find('div').childAt(1).is('p')).toBeTruthy();
     });
 
     test('- button should be third child', () => {
       const wrapper = shallow(<NumberBoard/>);
-      expect(wrapper.childAt(2).text()).toBe('-');
-      expect(wrapper.childAt(2).is('button')).toBeTruthy();
+      expect(wrapper.find('div').childAt(2).text()).toBe('-');
+      expect(wrapper.find('div').childAt(2).is('button')).toBeTruthy();
     });
 
     test('Clicking + button should add 1 to p', () => {

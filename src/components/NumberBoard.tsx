@@ -32,11 +32,11 @@ export default class NumberBoard extends React.Component<{}, NumberBoardState> {
     });
   }
   render() {
-    return  <>
+    return  <div>
               <button onClick={this.increaseCount}>+</button>
               <p>{ this.state.counter }</p>
               <button onClick={this.decreaseCount}>-</button>
-            </>;
+            </div>;
   }
 
 }
