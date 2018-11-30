@@ -61,5 +61,22 @@ describe('NumberBoard', () => {
       expect(wrapper.find('p').text()).toBe('-1')
     });
 
+    test('Clicking the + button 4 times should show limit 3', () => {
+      const wrapper = shallow(<NumberBoard value={0} max={3}/>);
+      wrapper.find('button').at(0).simulate('click');
+      wrapper.find('button').at(0).simulate('click');
+      wrapper.find('button').at(0).simulate('click');
+      wrapper.find('button').at(0).simulate('click');
+      expect(wrapper.find('p').text()).toBe('3');
+    })
+
+    test('Clicking the - button should not exeed min limit -3', () => {
+      const wrapper = shallow(<NumberBoard value={0} min={-3}/>);
+      wrapper.find('button').at(1).simulate('click');
+      wrapper.find('button').at(1).simulate('click');
+      wrapper.find('button').at(1).simulate('click');
+      wrapper.find('button').at(1).simulate('click');
+      expect(wrapper.find('p').text()).toBe('-3');
+    })
   });
 });
