@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export interface CounterButtonProps {
+export interface NumberBoardProps {
   counter: number;
   max: number;
   min: number;
@@ -10,9 +10,9 @@ export interface NumberBoardState {
   counter: number;
 }
 
-export default class NumberBoard extends React.Component<CounterButtonProps, NumberBoardState> {
+export default class NumberBoard extends React.Component<NumberBoardProps, NumberBoardState> {
 
-  constructor(props: CounterButtonProps) {
+  constructor(props: NumberBoardProps) {
     super(props);
     this.state = {
       counter: props.counter || 0
