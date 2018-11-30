@@ -1,13 +1,14 @@
 import * as React from 'react';
+import * as styles from "./NumberBoard.css";
 
 export interface NumberBoardProps {
-  counter: number;
-  max: number;
-  min: number;
+  counter?: number;
+  max?: number;
+  min?: number;
 }
 
 export interface NumberBoardState {
-  counter: number;
+  counter?: number;
 }
 
 export default class NumberBoard extends React.Component<NumberBoardProps, NumberBoardState> {
@@ -37,12 +38,14 @@ export default class NumberBoard extends React.Component<NumberBoardProps, Numbe
     }
     this.setState({ counter: newCounter });
   }
+
   render() {
-    return  <div>
-              <button onClick={this.increaseCount}>+</button>
-              <p>{ this.state.counter }</p>
-              <button onClick={this.decreaseCount}>-</button>
+    return  <div className={styles.container}>
+              <button className={styles.button} onClick={this.increaseCount}>+</button>
+              <label className={styles.label}>{ this.state.counter }</label>
+              <button className={styles.button} onClick={this.decreaseCount}>-</button>
             </div>;
   }
 
 }
+

@@ -1,0 +1,8 @@
+.template {
+  background: whitesmoke;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100vh;
+}

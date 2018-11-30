@@ -4,12 +4,12 @@ import NumberBoard from "../../src/components/NumberBoard";
 
 describe('NumberBoard', () => {
   describe('render', () => {
-    test('Should have + on button', () => {
-      const wrapper = shallow(<NumberBoard/>);
+    test('Should have a + button', () => {
+      const wrapper = shallow(<NumberBoard />);
       expect(wrapper.find('button').at(0).text()).toBe('+');
     });
 
-    test('Should have - on button', () => {
+    test('Should have a - button', () => {
       const wrapper = shallow(<NumberBoard/>);
       expect(wrapper.find('button').at(1).text()).toBe('-');
     });
@@ -21,7 +21,7 @@ describe('NumberBoard', () => {
 
     test('Should render 0', () => {
       const wrapper = shallow(<NumberBoard/>);
-      expect(wrapper.find('p').text()).toBe('0');
+      expect(wrapper.find('label').text()).toBe('0');
     });
 
     test('order of elements shoulb be +, 0, -', () => {
@@ -37,10 +37,10 @@ describe('NumberBoard', () => {
       console.log(wrapper.find('div').at(0).html())
     });
 
-    test('p should be second child and be 0', () => {
+    test('label should be second child and be 0', () => {
       const wrapper = shallow(<NumberBoard/>);
       expect(wrapper.find('div').childAt(1).text()).toBe('0');
-      expect(wrapper.find('div').childAt(1).is('p')).toBeTruthy();
+      expect(wrapper.find('div').childAt(1).is('label')).toBeTruthy();
     });
 
     test('- button should be third child', () => {
@@ -52,31 +52,30 @@ describe('NumberBoard', () => {
     test('Clicking + button should add 1 to p', () => {
       const wrapper = shallow(<NumberBoard/>);
       wrapper.find('button').at(0).simulate('click');
-      expect(wrapper.find('p').text()).toBe('1')
+      expect(wrapper.find('label').text()).toBe('1')
     });
 
     test('Clicking - button should add 1 to p', () => {
       const wrapper = shallow(<NumberBoard/>);
       wrapper.find('button').at(1).simulate('click');
-      expect(wrapper.find('p').text()).toBe('-1')
+      expect(wrapper.find('label').text()).toBe('-1')
     });
 
-    test('Clicking the + button 4 times should show limit 3', () => {
-      const wrapper = shallow(<NumberBoard value={0} max={3}/>);
+    test('Check that maximum is working', () => {
+      const maxCounter = 100;
+      const wrapper = shallow(<NumberBoard counter={maxCounter - 1} max={maxCounter}/>);
       wrapper.find('button').at(0).simulate('click');
       wrapper.find('button').at(0).simulate('click');
-      wrapper.find('button').at(0).simulate('click');
-      wrapper.find('button').at(0).simulate('click');
-      expect(wrapper.find('p').text()).toBe('3');
+      expect(wrapper.find('label').text()).toBe('100');
     })
 
-    test('Clicking the - button should not exeed min limit -3', () => {
-      const wrapper = shallow(<NumberBoard value={0} min={-3}/>);
+    test('Check that minimum is working', () => {
+      const minCounter = -50
+      const wrapper = shallow(<NumberBoard counter={minCounter + 1} min={minCounter}/>);
       wrapper.find('button').at(1).simulate('click');
       wrapper.find('button').at(1).simulate('click');
-      wrapper.find('button').at(1).simulate('click');
-      wrapper.find('button').at(1).simulate('click');
-      expect(wrapper.find('p').text()).toBe('-3');
+      expect(wrapper.find('label').text()).toBe('-50');
     })
+
   });
 });
