@@ -34,6 +34,7 @@ describe('NumberBoard', () => {
       const wrapper = shallow(<NumberBoard/>);
       expect(wrapper.childAt(0).text()).toBe('+');
       expect(wrapper.childAt(0).is('button')).toBeTruthy();
+      console.log(wrapper.at(0).html())
     });
 
     test('p should be second child and be 0', () => {
