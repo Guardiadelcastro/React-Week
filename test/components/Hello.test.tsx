@@ -4,9 +4,9 @@ import Hello from "../../src/components/Hello";
 
 describe('Hello', () => {
   describe('render', () => {
-    test('Should render with correct name', () => {
-      const wrapper = shallow(<Hello name="Bernard"/>);
-      expect(wrapper.find('h1').text()).toBe('Hello Bernard');
+    test('Debería renderizar con un nombre correcto', () => {
+      const wrapper = shallow(<Hello name="Juan"/>);
+      expect(wrapper.find('h1').text()).toBe('Hello Juan');
     });
   });
 });

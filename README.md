@@ -1,3 +1,3 @@
-# React Week
+# React Modulo 9 EOI
 
-Ejercicios de aprendizaje de React del curso de EOI otoño 2018
+Un ejemplo simple de un ejercicio para el curso de FullStack de la EOI TFN 2018

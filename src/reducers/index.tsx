@@ -6,7 +6,9 @@ export interface CounterState {
 }
 
 export interface AppState {
-  counter: CounterState;
+  counter: CounterState
 }
 
-export default combineReducers({counter});
+export default combineReducers({
+  counter
+});

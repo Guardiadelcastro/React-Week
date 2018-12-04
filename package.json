@@ -1,5 +1,5 @@
 {
-  "name": "react-mini",
+  "name": "react-modulo-9",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,16 +9,19 @@
     "dev": "webpack-dev-server --mode development",
     "test": "jest"
   },
-  "author": "Ale",
-  "license": "ISC",
-  "dependencies": {
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
-    "react-redux": "^5.1.1",
-    "react-router": "^4.3.1",
-    "react-router-dom": "^4.3.1",
-    "redux": "^4.0.1"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raulanatol/react-modulo-9.git"
   },
+  "keywords": [],
+  "author": {
+    "name": "raulanatol"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raulanatol/react-modulo-9/issues"
+  },
+  "homepage": "https://github.com/raulanatol/react-modulo-9#readme",
   "devDependencies": {
     "@types/enzyme": "^3.1.10",
     "@types/jest": "^22.2.3",
@@ -35,7 +38,6 @@
     "enzyme-adapter-react-16": "^1.1.1",
     "jest": "^23.0.1",
     "jest-css-modules": "^1.1.0",
-    "prettier": "1.15.3",
     "redux": "^4.0.0",
     "style-loader": "^0.21.0",
     "ts-jest": "^22.4.6",
@@ -47,6 +49,13 @@
     "webpack": "^4.9.1",
     "webpack-cli": "^2.1.4",
     "webpack-dev-server": "^3.1.4"
+  },
+  "dependencies": {
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-redux": "^5.0.7",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2"
   },
   "jest": {
     "transform": {
